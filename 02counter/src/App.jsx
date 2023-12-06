@@ -11,7 +11,16 @@ function App() {
   // let counter = 5
   const addValue = ()  => {
     //console.log("Clicked:", counter);
-    setCounter(counter++)
+    // setCounter(() => {})
+    setCounter(prevCounter => prevCounter + 1)
+    setCounter(prevCounter => prevCounter + 1) // but here it will update 2 times it is taking previous state
+    
+    // setCounter(counter+1)
+    // setCounter(counter+1)
+    // setCounter(counter+1)
+    // setCounter(counter+1)
+    // setCounter(counter+1) 
+    // this many counter will increment once only not 5 times
     // setCounter(prevCounter => prevCounter + 1)
     
   }
