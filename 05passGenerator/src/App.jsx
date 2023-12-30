@@ -8,7 +8,7 @@ function App() {
 
   //useRef hook
   const passwordRef = useRef(null);
-
+  // to call function whenever it needed like here with on checking numbers and characters we need to call that function
   const passwordGenerator = useCallback(() => {
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -16,12 +16,16 @@ function App() {
     if (charAllowed) str += "!@#$%^&*-_+=[]{}~`";
 
     for (let i = 1; i <= length; i++) {
-      let char = Math.floor(Math.random() * str.length + 1);
+      let char = Math.floor(Math.random() * str.length + 1); // creating random pass
       pass += str.charAt(char);
     }
 
     setPassword(pass);
   }, [length, numberAllowed, charAllowed, setPassword]);
+  // Above are dependecies
+  // useCallback(() => {}, dependecies)
+  // Here above dep are that might change
+  // but in useEffect the depe are whenever it changes rerender it
 
   const copyPasswordToClipboard = useCallback(() => {
     passwordRef.current?.select();

@@ -1,7 +1,9 @@
 import { useState } from "react";
+
 function App() {
   const [color, setColor] = useState("olive");
-
+  // for () => setColor("red")  we have to write in call back as per notes 
+  // if we have wrote setColor("red") it would have been invoke funcrion directly.
   return (
     <div
       className="w-full h-screen duration-200"
