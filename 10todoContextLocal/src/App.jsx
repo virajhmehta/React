@@ -25,7 +25,7 @@ function App() {
   // such a way that it filters out those which  is not matching
 
   const deleteTodo = (id) => {
-    setTodos((prev) => prev.filter((todo) => todo !== id));
+    setTodos((prev) => prev.filter((todo) => todo.id !== id));
   };
 
   // for toggleComplete we have go inside the todos array to change the
